@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Masis - Cita Rasa Kuliner Nusantara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #d9534f;
+            --secondary-color: #f0ad4e;
+            --dark-color: #2c3e50;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; max-width: 600px; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+        }
+
+        .instruction-list {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* ===== TABEL ===== */
+        .scroll-x { overflow-x: auto; }
+
+        table.data {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        table.data caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark-color);
+            padding-bottom: 8px;
+        }
+
+        table.data th,
+        table.data td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+
+        table.data thead th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        table.data tbody tr:hover td {
+            background-color: #fff3e0;
+        }
+
+        table.data td.kategori {
+            background-color: #fdeccf;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        table.data td.foto {
+            width: 110px;
+            text-align: center;
+            padding: 6px;
+        }
+
+        table.data td.foto img {
+            width: 90px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        table.data td.angka { text-align: right; white-space: nowrap; }
+        table.data td.tengah { text-align: center; }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Restoran Masis</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Daftar Menu</a></li>
+                <li><a href="gallery.html">Gallery & Video</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Selamat Datang di Restoran Masis</h1>
+        <p>Nikmati perpaduan rasa khas Nusantara dengan pelayanan terbaik dan sajian bermutu tinggi.</p>
+    </section>
+
+    <div class="container">
+        
+        <div class="section-box">
+            <h2>Tentang Layanan Kami</h2>
+            <p>
+                Restoran Masis berkomitmen untuk menyajikan makanan khas Indonesia dengan bahan-bahan pilihan yang selalu segar. Kami menyediakan berbagai variasi hidangan mulai dari makanan berat, hidangan penutup (dessert), hingga minuman rempah tradisional. Anda dapat melakukan pemesanan langsung di tempat maupun secara daring melalui WhatsApp.
+            </p>
+        </div>
+        
+        <!-- TABEL DAFTAR MENU -->
+        <div id="menu" class="section-box">
+            <h2>Kategori & Menu Restoran</h2>
+            <p>Berikut adalah rincian daftar menu berdasarkan kategorinya:</p>
+
+            <div class="scroll-x">
+                <table class="data" border="1" cellspacing="0" cellpadding="8">
+                    <thead>
+                        <tr>
+                            <th colspan="2" rowspan="2">Kategori</th>
+                            <th rowspan="2">Nama Menu</th>
+                            <th colspan="2">Harga</th>
+                        </tr>
+                        <tr>
+                            <th>Rupiah (Rp)</th>
+                            <th>Dolar (US$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="kategori" rowspan="5">Makanan Utama</td>
+                            <td class="foto"><img src="nasgor.jpeg" alt="Nasi Goreng Spesial"></td>
+                            <td>Nasi Goreng Spesial</td>
+                            <td class="angka">Rp 25.000</td>
+                            <td class="angka">$1.42</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="ayamtaliwang.jpeg" alt="Ayam Bakar Taliwang"></td>
+                            <td>Ayam Bakar Taliwang</td>
+                            <td class="angka">Rp 30.000</td>
+                            <td class="angka">$1.70</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="soto.jpeg" alt="Soto Ayam Madura"></td>
+                            <td>Soto Ayam Madura</td>
+                            <td class="angka">Rp 22.000</td>
+                            <td class="angka">$1.25</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="rendang.jpeg" alt="Rendang Daging Sapi"></td>
+                            <td>Rendang Daging Sapi</td>
+                            <td class="angka">Rp 35.000</td>
+                            <td class="angka">$1.99</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="gulai.jpeg" alt="Gulai Kepala Ikan"></td>
+                            <td>Gulai Kepala Ikan</td>
+                            <td class="angka">Rp 40.000</td>
+                            <td class="angka">$2.27</td>
+                        </tr>
+
+                        <tr>
+                            <td class="kategori" rowspan="2">Snack Tradisional & Dessert</td>
+                            <td class="foto"><img src="dessert.jpeg" alt="Kue Lupis Ketan"></td>
+                            <td>Kue Lupis Ketan</td>
+                            <td class="angka">Rp 10.000</td>
+                            <td class="angka">$0.57</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="tempe mendoan.jpeg" alt="Mendoan Hangat"></td>
+                            <td>Mendoan Hangat</td>
+                            <td class="angka">Rp 8.000</td>
+                            <td class="angka">$0.45</td>
+                        </tr>
+
+                        <tr>
+                            <td class="kategori" rowspan="3">Minuman</td>
+                            <td class="foto"><img src="esteh.jpeg" alt="Es Teh Manis"></td>
+                            <td>Es Teh Manis</td>
+                            <td class="angka">Rp 5.000</td>
+                            <td class="angka">$0.28</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="esjeruk.jpeg" alt="Es Jeruk Peras"></td>
+                            <td>Es Jeruk Peras</td>
+                            <td class="angka">Rp 7.000</td>
+                            <td class="angka">$0.40</td>
+                        </tr>
+                        <tr>
+                            <td class="foto"><img src="wedang.jpeg" alt="Wedang Jahe Rempah"></td>
+                            <td>Wedang Jahe Rempah</td>
+                            <td class="angka">Rp 10.000</td>
+                            <td class="angka">$0.57</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <h2>Panduan 5 Langkah Pemesanan Makanan</h2>
+            <p>Ikuti langkah-langkah berikut untuk memesan hidangan favorit Anda secara praktis:</p>
+            
+            <ol class="instruction-list">
+                <li><strong>Pilih Menu:</strong> Amati dan pilih hidangan yang Anda inginkan dari daftar kategori menu di atas.</li>
+                <li><strong>Pilih Metode Pemesanan:</strong> Tentukan apakah ingin memesan langsung di meja (Dine-in), Takeaway, atau melalui WhatsApp.</li>
+                <li><strong>Sampaikan Pesanan:</strong> Beritahukan item menu beserta jumlah porsi yang Anda inginkan kepada kasir atau pelayan.</li>
+                <li><strong>Lakukan Pembayaran:</strong> Selesaikan transaksi pembayaran menggunakan metode Tunai, Transfer Bank, atau QRIS.</li>
+                <li><strong>Terima & Nikmati Sajian:</strong> Tunggu beberapa saat hingga pesanan disajikan hangat di meja Anda atau siap dibawa pulang.</li>
+            </ol>
+        </div>
+
+        <!-- TABEL JAM OPERASIONAL -->
+        <div id="jam" class="section-box">
+            <h2>Jam Operasional</h2>
+            <p>Berikut jadwal operasional Restoran Masis:</p>
+
+            <div class="scroll-x">
+                <table class="data" border="1" cellspacing="0" cellpadding="8">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Waktu (WIB)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
+                            <td class="tengah" colspan="2">Libur</td>
+                        </tr>
+                        <tr>
+                            <td>Selasa - Jumat</td>
+                            <td class="tengah">09.00 - 22.00</td>
+                            <td class="tengah">Buka</td>
+                        </tr>
+                        <tr>
+                            <td>Sabtu - Minggu</td>
+                            <td class="tengah">09.00 - 23.59</td>
+                            <td class="tengah">Buka</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="kontak" class="section-box">
+            <h2>Lokasi & Kontak</h2>
+            <p>
+                <strong>Alamat:</strong> Jl. Dahlia No. 12, Larangan, Brebes<br>
+                <strong>Jam Operasional:</strong> Selasa - Jumat (09.00 - 22.00 WIB), Sabtu - Minggu (09.00 - 23.59 WIB), Senin libur<br>
+                <strong>No. Telepon / WhatsApp:</strong> 0812-3456-7890<br>
+                <strong>Email:</strong> info@restoranmasis.com
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Restoran Masis. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
